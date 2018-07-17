@@ -179,4 +179,13 @@ function vid(){
 export HOMEBREW_CELLAR="/usr/local/Cellar"
 
 alias githis="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+function icode(){
+    echo "git clone ssh://changhaozhe@icode.baidu.com:8235/${1}"
+    git clone ssh://changhaozhe@icode.baidu.com:8235/${1}
+}
+function baidu(){
+    echo "git clone ssh://changhaozhe@icode.baidu.com:8235/baidu/ps-se/${1}"
+    git clone ssh://changhaozhe@icode.baidu.com:8235/baidu/ps-se/${1} 
+}
+#alias icode="git clone ssh://changhaozhe@icode.baidu.com:8235"
 
