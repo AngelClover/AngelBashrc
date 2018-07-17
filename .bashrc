@@ -182,10 +182,12 @@ alias githis="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 function icode(){
     echo "git clone ssh://changhaozhe@icode.baidu.com:8235/${1}"
     git clone ssh://changhaozhe@icode.baidu.com:8235/${1}
+    scp -p -P 8235 changhaozhe@icode.baidu.com:hooks/commit-msg $(git rev-parse --git-dir)/hooks
 }
 function baidu(){
     echo "git clone ssh://changhaozhe@icode.baidu.com:8235/baidu/ps-se/${1}"
     git clone ssh://changhaozhe@icode.baidu.com:8235/baidu/ps-se/${1} 
+    scp -p -P 8235 changhaozhe@icode.baidu.com:hooks/commit-msg $(git rev-parse --git-dir)/hooks
 }
 #alias icode="git clone ssh://changhaozhe@icode.baidu.com:8235"
 
