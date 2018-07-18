@@ -156,6 +156,11 @@ git config --global alias.tree 'log --graph --decorate --pretty=oneline --abbrev
 
 git config --global merge.tool /usr/bin/vimdiff
 git config --global core.editor /usr/bin/vim
+git config --global pull.rebase true
+
+alias githis="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+
+
 alias firefox='open /Applications/Firefox.app'
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/"
@@ -178,7 +183,6 @@ function vid(){
 }
 export HOMEBREW_CELLAR="/usr/local/Cellar"
 
-alias githis="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
 function icode(){
     echo "git clone ssh://changhaozhe@icode.baidu.com:8235/${1}"
     git clone ssh://changhaozhe@icode.baidu.com:8235/${1}
