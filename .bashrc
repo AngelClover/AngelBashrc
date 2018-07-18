@@ -130,7 +130,7 @@ alias cdes="cd ~/git/elasticsearch-fordoc/src/main/java/org/elasticsearch/"
 
 alias cppgrep="find . -name *.cpp | xargs grep -nH"
 alias hgrep="find . -name *.h | xargs grep -nH"
-alias codegrep="find . -name \"*.h\" -or -name \"*.cpp\" -or -name \"*.py\" -or -name \"*.conf\" -or -name \"*.php\" -or -name \"*.js\" | grep -v html| xargs grep -nH"
+alias codegrep="find . -path \"*node_module*\" -prune -o -name \"*.h\" -or -name \"*.cpp\" -or -name \"*.py\" -or -name \"*.conf\" -or -name \"*.php\" -or -name \"*.js\" | grep -v html| xargs grep -nH"
 alias makegrep="find . -name \"Makefile\" -or -name \"makefile\" -or -name \"*.make\" | xargs grep -nH"
 alias idlgrep="find . -name \"*.idl\" -or -name \"*.h\" | xargs grep -nH"
 alias vigrep="find . -name \"*.vim\" | xargs grep -nH"
@@ -182,10 +182,21 @@ alias githis="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 function icode(){
     echo "git clone ssh://changhaozhe@icode.baidu.com:8235/${1}"
     git clone ssh://changhaozhe@icode.baidu.com:8235/${1}
+    scp -p -P 8235 changhaozhe@icode.baidu.com:hooks/commit-msg $(git rev-parse --git-dir)/hooks
 }
 function baidu(){
     echo "git clone ssh://changhaozhe@icode.baidu.com:8235/baidu/ps-se/${1}"
     git clone ssh://changhaozhe@icode.baidu.com:8235/baidu/ps-se/${1} 
+    scp -p -P 8235 changhaozhe@icode.baidu.com:hooks/commit-msg $(git rev-parse --git-dir)/hooks
 }
 #alias icode="git clone ssh://changhaozhe@icode.baidu.com:8235"
+alias ctags="`brew --prefix`/bin/ctags"
+
+alias cnpm="npm --registry=https://registry.npm.taobao.org"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export NVM_DIR="/Users/angelclover/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
